@@ -1,5 +1,5 @@
 'use strict';
-//Test github by CArlos
+
 // Cart constructor.
 var Cart = function(items) {
   // this.items is an array of CartItem instances.
