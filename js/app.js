@@ -7,13 +7,16 @@ var Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
+
   var shoppingItem = new CartItem(product ,quantity);
   this.items.push(shoppingItem);
 };
 
 Cart.prototype.saveToLocalStorage = function() {
   var cartData = localStorage.setItem('cart', JSON.stringify(this.items));
+
 };
+
 
 Cart.prototype.removeItem = function(item) {
   // find index at which product sits in cart
