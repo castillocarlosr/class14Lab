@@ -7,14 +7,12 @@ var Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
-
   var shoppingItem = new CartItem(product ,quantity);
   this.items.push(shoppingItem);
 };
 
 Cart.prototype.saveToLocalStorage = function() {
   var cartData = localStorage.setItem('cart', JSON.stringify(this.items));
-
 };
 
 
@@ -22,7 +20,7 @@ Cart.prototype.removeItem = function(item) {
   // find index at which product sits in cart
   var itemIndex = 0;
   for(var i = 0; i < this.items.length; i++){
-    if(this.items[i].product === item.product){
+    if(this.items[i].product.name === item.product.name){
       itemIndex = i;
     }
   }
@@ -70,5 +68,4 @@ function generateCatalog() {
 
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
-
 
